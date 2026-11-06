@@ -117,6 +117,13 @@ Data yang digunakan :
 | `_i08` | Sistem Pengereman (Rem Pneumatik) | Tekanan Brake Pipe (BP) | 4,8 - 5,2 bar | `input_num` | angka, satuan bar | TC1, M1, M2, TC2 | `{"_t01":"5.1",...}` |
 | `_i09` | Sistem Pengereman (Rem Pneumatik) | Ketebalan kampas rem (brake pad) | Minimal 10 mm | `input_num_multi` | 2 angka per gerbong (Axle 1, Axle 2), satuan mm | TC1, M1, M2, TC2 | `{"_t01":[{"value":"14.5","label":"Axle 1"},{"value":"18.4","label":"Axle 2"}],...}` |
 
+Criteria : 
+1. Tekanan Main Reservoir
+2. Tekanan Brake Pipe
+3. Ketebalan Kampas Rem 
+
+Sub Criteria ? hmm mungkin tidak ada, eh bisa si kan kalo melihat template data nya tiap gerbong ada data pengecekan sendiri nah bisa itu di buat sub criteria nya menghitung keseluruhan nilai dari rangkaian gerbong tsb.
+
 Untuk gambaran kasar aplikasi ini penggunanya ada dua 
 1. Petugas di lapangan 
 2. Admin / Manager di kantor

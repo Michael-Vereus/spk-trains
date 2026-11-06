@@ -157,8 +157,26 @@ Struktur Proposal :
 6. Schema Database
 
 Komponen SPK 
-1. View
-2. Model 
-3. Database
+1. View (UI Management Subsystem )-> Desain User Interface
+2. Model (Model Management Subsystem)-> Metode SMART
+3. Database (Data Management Subsystem)-> MySQL 
 
 Fase SPK
+
+4 Fase dalam SPK :
+  1. Fase Intelligence -> Nyari masalah
+
+    Hasil : Alasan atau identifikasi mengapa DSS itu diperlukan
+  2. Fase Design -> Desain Solusi
+
+    Hasil : Menggunakan Metode matematika yang akan di implementasikan untuk 
+            digunakan di dalam aplikasi
+  3. Fase Choice -> Memberikan saran solusi
+
+    Hasil : Rekomendasi alternatif
+  4. Fase Implementation -> Penerapan di studi kasus skala kecil
+
+    Hasil : Aplikasi SPK yang berjalan dan diuji mneggunakan sampel data.
+
+
+Pokoknya struktur proposal harus menjawab 3 Komponen SPK tsb

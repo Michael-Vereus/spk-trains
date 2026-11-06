@@ -103,6 +103,35 @@ Sekarang detailin form pemeriksaan berkala sarana lrt
 
 
 ## Hmmm . . .
-    Scratch yg diatas kita pake SPK ini : 
+
+
+Scratch yg diatas kita pake SPK ini : 
     
 # Sistem Pendukung Keputusan Penentuan Urgensi Perbaiki Sistem Pengereman di Rangkaian LRT Menggunakan Metode SMART
+
+Data yang digunakan : 
+
+| ID | Bagian | Pertanyaan | Standar | Tipe jawaban | Nilai yang diizinkan | Diisi di | Bentuk penyimpanan |
+|--|--|--|--|--|--|--|--|
+| `_i07` | Sistem Pengereman (Rem Pneumatik) | Tekanan Main Reservoir (MR) | 8,0 - 10,0 bar | `input_num` | angka, satuan bar | M1, M2 | `{"_t02":"8.5","_t03":"8.3"}` |
+| `_i08` | Sistem Pengereman (Rem Pneumatik) | Tekanan Brake Pipe (BP) | 4,8 - 5,2 bar | `input_num` | angka, satuan bar | TC1, M1, M2, TC2 | `{"_t01":"5.1",...}` |
+| `_i09` | Sistem Pengereman (Rem Pneumatik) | Ketebalan kampas rem (brake pad) | Minimal 10 mm | `input_num_multi` | 2 angka per gerbong (Axle 1, Axle 2), satuan mm | TC1, M1, M2, TC2 | `{"_t01":[{"value":"14.5","label":"Axle 1"},{"value":"18.4","label":"Axle 2"}],...}` |
+
+Untuk gambaran kasar aplikasi ini penggunanya ada dua 
+1. Petugas di lapangan 
+2. Admin / Manager di kantor
+
+Simpelnya 
+Alur Petugas : 
+- Petugas itu ngecek sistem rem udara di setiap rangkaian LRT, tiap kalo selesai ngecek 1 rangkaian langsung nyatet di aplikasi nya (mungking desainnya bakal kaya form gitu ya )
+- Setiap kali user mengirimkna form / data maka secara otomatis sistem akan menghitung skor nya menggunakan metode SMART yang nanti hasil kalkulasi skor tersebut akan disimpan di database bersama data rangkaian LRT tsb.
+
+Alur Admin : 
+- Buka Aplikasi check rankingnya dan bisa ambil action untuk notifikasi Engineer reparasi.
+
+Techstack : Laravel, MySQL
+
+Harus normalisasikan data karena dalam skala dan satuan berbeda. 
+Bobobt ? hmm bisa pake AHP untuk bobot atau asumsi sendiri kalo mau lebih simpel.
+
+Bisa pake AHP buat bobot soale hasil dri AHP adalah matriks 1 dimensi yg isa dipake ke metode yg lain untuk perhitungan skor akhir.

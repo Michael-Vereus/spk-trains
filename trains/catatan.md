@@ -17,9 +17,10 @@ Hmm harus e buat SPK bakal kebanyakan make data dari table forms dan submissions
 
 user, role dan subroles
 MariaDB [spk]> select u.name, u.role, r.description, sr.name , sr.description from users u join roles r on u.role_id = r.id join subroles sr on JSON_CONTAINS(u.subrole_ids, CAST(sr.id AS CHAR));
-+----------------+------------+-----------------------------------------------+-------------------+----------------------------------------------+
+
+
 | name           | role       | description                                   | name              | description                                  |
-+----------------+------------+-----------------------------------------------+-------------------+----------------------------------------------+
+|---|----|----|----|---|
 | Agus Pratama   | engineer   | Engineering role with project-specific access | LRT Jabodebek     | Proyek perawatan sarana LRT Jabodebek        |
 | Siti Rahmawati | engineer   | Engineering role with project-specific access | KRL Commuter Line | Proyek perawatan rangkaian KRL Commuter Line |
 | Siti Rahmawati | engineer   | Engineering role with project-specific access | KA Bandara        | Proyek perawatan kereta api bandara          |
@@ -28,7 +29,6 @@ MariaDB [spk]> select u.name, u.role, r.description, sr.name , sr.description fr
 | Eko Prasetyo   | technician | Technician role with project-specific access  | KRL Commuter Line | Proyek perawatan rangkaian KRL Commuter Line |
 | Yusuf Maulana  | technician | Technician role with project-specific access  | KRL Commuter Line | Proyek perawatan rangkaian KRL Commuter Line |
 | Dimas Aditya   | technician | Technician role with project-specific access  | KA Bandara        | Proyek perawatan kereta api bandara          |
-+----------------+------------+-----------------------------------------------+-------------------+----------------------------------------------+
 
 
 # Ide masalah yang diangkat buat SPK : 
@@ -36,16 +36,16 @@ MariaDB [spk]> select u.name, u.role, r.description, sr.name , sr.description fr
 
 Masalah : di tabel subrole kan bisa berisi banyak proyek perawatan kereta, nah spk e ini mau narget yg mana? 
 MariaDB [spk]> select id, title from forms;
-+----+-----------------------------------+
+
 | id | title                             |
-+----+-----------------------------------+
+|-|----|
 |  1 | PEMERIKSAAN BERKALA SARANA LRT    |
 |  2 | PEMERIKSAAN BERKALA RANGKAIAN KRL |
 |  3 | PENGUKURAN RODA DAN BOGIE KRL     |
 |  4 | PEMERIKSAAN HARIAN KERETA BANDARA |
 |  5 | INSPEKSI K3 DEPO DAN WORKSHOP     |
 |  6 | FORM UJI COBA                     |
-+----+-----------------------------------+
+
 6 rows in set (0.001 sec)
 
 - hmmm rasa e mending form ke lima dan enam engga usa

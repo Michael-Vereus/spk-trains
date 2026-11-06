@@ -142,3 +142,23 @@ Harus normalisasikan data karena dalam skala dan satuan berbeda.
 Bobobt ? hmm bisa pake AHP untuk bobot atau asumsi sendiri kalo mau lebih simpel.
 
 Bisa pake AHP buat bobot soale hasil dri AHP adalah matriks 1 dimensi yg isa dipake ke metode yg lain untuk perhitungan skor akhir.
+
+
+Pastikan alternatif Gerbong ta kereta
+
+Kenapa milih judul SPK ini ?
+
+Struktur Proposal :
+1. Judul
+2. Latar Belakang
+3. Tujuan
+4. Aktor
+5. Alur Aplikasi / Use Case
+6. Schema Database
+
+Komponen SPK 
+1. View
+2. Model 
+3. Database
+
+Fase SPK
